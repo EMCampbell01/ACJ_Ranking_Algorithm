@@ -1,4 +1,4 @@
-class Task():
+class RankingData():
     
     def __init__(self):
         self.comparisons = []
