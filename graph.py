@@ -5,7 +5,7 @@ def create_graph(students):
     student_data = []
     
     for student in students:
-        student_data.append(student.task.high_low)
+        student_data.append(student.ranking_data.high_low)
 
     # Create a boxplot
     fig, ax = plt.subplots()
