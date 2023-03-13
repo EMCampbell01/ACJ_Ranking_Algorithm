@@ -36,7 +36,7 @@ def generate_sample_dataset(studentCount=10, error_probability=None):
 
     student_ranking.reverse()
         
-    return [student_list, student_ranking]
+    return student_list, student_ranking
 
 # TODO - Add comment
 def generate_sample_review(review, real_ranking):
