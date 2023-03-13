@@ -1,9 +1,9 @@
-from task import Task
+from ranking_data import RankingData
 
 class Student():
     
     def __init__(self, id, review, rating):
         self.student_id = id
-        self.review = review
+        self.reviews = review
         self.rating = rating
-        self.task = Task()
+        self.ranking_data = RankingData()
