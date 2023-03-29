@@ -1,4 +1,4 @@
-iimport statistics
+import statistics
 
 class Comparison():
     
