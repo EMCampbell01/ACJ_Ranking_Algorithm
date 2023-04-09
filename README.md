@@ -34,6 +34,3 @@ python ranker_test.py
 
 Python 3.6 or higher
 No external dependencies are required.
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions or improvements.
-This repository contains a Python implementation of an algorithm designed to estimate student performance rankings based on peer review data. The algorithm processes "rated pairs" representing peer reviews and generates a resulting data structure that can be used to create a box plot graph.
