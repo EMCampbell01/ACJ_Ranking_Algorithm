@@ -24,7 +24,7 @@ Run main.py with the JSON data as a command-line argument:
 
 python main.py '{"json_data": [{"lower": 1, "higher": 2, "rating": 0.8}, {"lower": 2, "higher": 3, "rating": 0.6}]}'
 
-## ranker_test.py
+### ranker_test.py
 
 Run ranker_test.py to test the Ranker class:
 
