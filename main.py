@@ -22,10 +22,14 @@ def main(json_data):
     for rated_pair in rated_pairs:
         ranker.add_new_pair(rated_pair)
 
-    result = ranker.get_ranking()
+    ranking_result = ranker.get_ranking()
+    next_best_reviews = ranker.get_next_best_reviews()
 
-    json_result = json.dumps(result)
-    print(json_result)
+    json_ranking_result = json.dumps(ranking_result)
+    print(json_ranking_result)
+    
+    json_next_best_reviews = json.dumps(next_best_reviews)
+    print(json_next_best_reviews)
 
 if __name__ == "__main__":
     
