@@ -36,4 +36,5 @@ python ranker_test.py
 ## Dependencies
 
 Python 3.6 or higher
+
 No external dependencies are required.
