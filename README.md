@@ -7,14 +7,19 @@ This repository contains a Python implementation of an algorithm designed to est
 ### The main components of the code are:
 
 **main.py:** The main script that takes JSON data as input and processes it to generate a ranking of student performance.
+
 **ranker.py:** Contains the Ranker class, which implements the ranking algorithm.
+
 **rated_pair.py:** Defines the RatedPair class, which represents a peer review with a high, low, and rating.
 
 ### Rated Pair
+
 Each "rated pair" represents a link between two students, consisting of:
 
 **lower:** The lower-performing student.
+
 **higher:** The higher-performing student.
+
 **rating:** A score from 0 to 1 representing how much trust can be placed in the review.
 
 ### Creating Results
