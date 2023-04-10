@@ -20,6 +20,8 @@ class Ranker():
     # Adds new pair to data
     def add_new_pair(self, new_pair: RatedPair):
         
+        new_pair.square_rating()
+        
         # First add/update new pair
         pre_existing_pair = self.get_pair(new_pair.lower, new_pair.higher)
         if pre_existing_pair:
@@ -81,6 +83,29 @@ class Ranker():
             results[student] = {"low": lower_count, "high": len(results) - higher_count}
             
         return results
+    
+    def get_next_best_reviews(self):
+        
+        sorted_rated_pairs = sorted(self.data, key=lambda rp: rp.rating)
+        
+        next_best_reviews = []
+        
+        for rated_pair in sorted_rated_pairs:
+            next_best_reviews.append((rated_pair.lower, rated_pair.higher))
+        
+        all_students = set()
+        for rated_pair in self.data:
+            all_students.add(rated_pair.lower)
+            all_students.add(rated_pair.higher)
+            
+        for student1 in all_students:
+            for student2 in all_students:
+                if student1 == student2:
+                    continue
+                if not self.get_pair(student1, student2) and not self.get_pair(student2, student1):
+                    next_best_reviews.insert(0, (student1, student2))
+                    
+        return next_best_reviews  
     
     # TODO - Not currently in use
     def get_higher_lower(self, assignment1, assignment2):
