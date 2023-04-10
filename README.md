@@ -1,6 +1,6 @@
 # Student Performance Ranker
 
-This repository contains a Python implementation of an algorithm designed to estimate student performance as a ranking, based on peer reviews. The algorithm processes peer reviews, and created 'Rated Pairs' representing a link between two students, and generates JSON data that can be used to create a box plot graph.
+This repository contains a Python implementation of an algorithm designed to estimate student performance as a ranking, based on peer reviews. The algorithm processes peer reviews, and creates 'Rated Pairs' representing a link between two students, and generates JSON data that can be used to create a box plot graph.
 
 ## Description
 
