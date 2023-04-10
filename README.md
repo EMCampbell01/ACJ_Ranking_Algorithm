@@ -9,12 +9,15 @@ main.py: The main script that takes JSON data as input and processes it to gener
 ranker.py: Contains the Ranker class, which implements the ranking algorithm using rated pairs.
 ranker_test.py: A script to test the Ranker class by continuously adding random rated pairs and displaying the resulting ranking.
 rated_pair.py: Defines the RatedPair class, which represents a peer review with a high, low, and rating.
-Rated Pair
+
+### Rated Pair
 Each "rated pair" represents a peer review, consisting of:
 
 lower: The lower-performing student.
 higher: The higher-performing student.
 rating: A score from 0 to 1 representing how much trust can be placed in the review.
+
+![myGIF](https://user-images.githubusercontent.com/75681738/230832541-e14e797b-4a16-44e4-9485-58c28c980078.gif)
 
 ## Usage
 
