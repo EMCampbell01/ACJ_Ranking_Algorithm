@@ -1,5 +1,6 @@
 from ranker import Ranker
 from rated_pair import RatedPair
+from visualisations import draw_graph
 import random
 
 '''
@@ -59,6 +60,7 @@ class RankerTest():
             added_pairs += 1
             
         self.display_ranking(ranking)    
+        draw_graph(self.ranker)
         
     def add_random_pairs(self, num):
         
@@ -120,3 +122,4 @@ if __name__ == "__main__":
     tester = RankerTest(STUDENT_COUNT, ERROR_PROBABILITY)
     print(f'Real ranking: {tester.real_ranking}')
     tester.test(NUM_REVIEWS)      
+
