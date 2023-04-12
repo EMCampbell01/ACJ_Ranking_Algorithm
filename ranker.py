@@ -6,6 +6,9 @@ class Ranker():
     def __init__(self) -> None:
         
         self.data = [] # holds all rated pairs
+        self.students = set()
+        self.ranking = None
+        self.order = None
     
     # Given (lower, higher) returns the associated RatedPair in data, Returns None if it does not exist
     def get_pair(self, lower, higher):
@@ -20,6 +23,7 @@ class Ranker():
     # Adds new pair to data
     def add_new_pair(self, new_pair: RatedPair):
         
+        new_pair.reviewed = True
         new_pair.square_rating()
         
         # First add/update new pair
@@ -47,10 +51,12 @@ class Ranker():
                                 pre_existing_pair.rating = new_rating
                                 
                         else:
-                            self.data.append(RatedPair(rated_pair_2.lower, rated_pair_1.higher, new_rating))
+                            linking_pair = RatedPair(rated_pair_2.lower, rated_pair_1.higher, new_rating)
+                            self.data.append(linking_pair)
                             updated_data = True
                             
             if updated_data == False:
+                self.set_students()
                 break
     
     # Used to generate final resuts. Returns a a dict of students which each have a high/low (for box plot graph)      
@@ -81,7 +87,9 @@ class Ranker():
                     higher_count += 1
                     
             results[student] = {"low": lower_count, "high": len(results) - higher_count}
-            
+        
+        self.ranking = results
+        self.order = sorted(self.ranking.keys(), key=lambda s: (self.ranking[s]['high'] + self.ranking[s]['low']) / 2)
         return results
     
     def get_next_best_reviews(self):
@@ -106,6 +114,13 @@ class Ranker():
                     next_best_reviews.insert(0, (student1, student2))
                     
         return next_best_reviews  
+    
+    def set_students(self):
+        
+        for rated_pair in self.data:
+            self.students.add(rated_pair.lower)
+            self.students.add(rated_pair.higher)
+        
     
     # TODO - Not currently in use
     def get_higher_lower(self, assignment1, assignment2):
@@ -134,3 +149,4 @@ class Ranker():
                 probability = 0.5
                     
         return ((assignment1, assignment2), probability)
+
