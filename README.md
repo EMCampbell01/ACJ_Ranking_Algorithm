@@ -6,25 +6,20 @@ This repository contains a Python implementation of an algorithm designed to est
 
 ### The main components of the code are:
 
-**main.py:** The main script that takes JSON data as input and processes it to generate a ranking of student performance.
-
-**ranker.py:** Contains the Ranker class, which implements the ranking algorithm.
-
-**rated_pair.py:** Defines the RatedPair class, which represents a peer review with a high, low, and rating.
+- **main.py:** The main script that takes JSON data as input and processes it to generate a ranking of student performance.
+- **ranker.py:** Contains the Ranker class, which implements the ranking algorithm.
+- **rated_pair.py:** Defines the RatedPair class, which represents a peer review with a high, low, and rating.
+- **visualisations.py** Contains functionality for displaying an amimation representing the generation of ranking results.
 
 ### Rated Pair
 
 Each "rated pair" represents a link between two students, consisting of:
 
-**lower:** The lower-performing student.
-
-**higher:** The higher-performing student.
-
-**rating:** A score from 0 to 1 representing how much trust can be placed in the review.
+- **lower:** The lower-performing student.
+- **higher:** The higher-performing student.
+- **rating:** A score from 0 to 1 representing how much trust can be placed in the review.
 
 ### Creating Results
-
-Each peer review in the inital JSON data is converted into a RatedPair object and this is added to the rankers data
 
 Each time a peer review is added to the data, any additional links that can be identified are also added to ranker data as a RaterPair, as shown below:
 
@@ -32,7 +27,11 @@ Each time a peer review is added to the data, any additional links that can be i
 
 The rating of identified linking pairs is equal to the product of the intermediate rated pairs.
 
+the draw_graphs function in visulisations.py is used to display the creation of a student ranking from rated pairs. A snippit is shown below:
+
 https://user-images.githubusercontent.com/75681738/231398619-986319f3-c92a-4ff9-a796-09325ddfa69f.mp4
+
+On the 'network graph' (left) each node represents a student. Each line between the nodes represents a rated pair, blue is a product of a peer review, green if the product of an identified link. On the right the box plot graph shows the range in which that students rank can be estimated, given enough reviews, this range for each student can be reduced to its accurate placement.
 
 ## Usage
 
