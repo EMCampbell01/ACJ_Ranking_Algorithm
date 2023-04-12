@@ -24,11 +24,13 @@ Each "rated pair" represents a link between two students, consisting of:
 Each time a peer review is added to the data, any additional links that can be identified are also added to ranker data as a RaterPair, as shown below:
 
 ![myGIF](https://user-images.githubusercontent.com/75681738/230832541-e14e797b-4a16-44e4-9485-58c28c980078.gif)
+
 The rating of identified linking pairs is equal to the product of the intermediate rated pairs.
 
 the draw_graphs function in visulisations.py is used to display the creation of a student ranking from rated pairs. A snippit is shown below:
 
 https://user-images.githubusercontent.com/75681738/231398619-986319f3-c92a-4ff9-a796-09325ddfa69f.mp4
+
 On the 'network graph' (left) each node represents a student. Each line between the nodes represents a rated pair, blue is a product of a peer review, green if the product of an identified link. On the right the box plot graph shows the range in which that students rank can be estimated, given enough reviews, this range for each student can be reduced to its accurate placement.
 
 ## Usage
