@@ -64,7 +64,7 @@ UPDATE THIS!
 
 Each Comparison object represents a comparison link between two objects, consisting of:
 
-- **lower: The lower-rated object.
+- **lower:** The lower-rated object.
 - **higher:** The higher-rated object.
 - **rating:** A score from 0 to 1 representing how much trust can be placed in the comparison.
 
