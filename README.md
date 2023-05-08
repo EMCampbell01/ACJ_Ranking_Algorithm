@@ -70,12 +70,18 @@ Each Comparison object represents a comparison link between two objects, consist
 
 ### visualisations.py
 
-the draw_graphs function in visulisations.py is used to display the creation of a student ranking from rated pairs. A snippit is shown below:
+**print_graph**
+The print_graph function will use the ranking of a ComparisonRanker to draw a box plot in the console.
+
+https://user-images.githubusercontent.com/75681738/236834399-421bdaac-35d2-4bd0-91b5-f0680307eea5.mp4
+
+**draw_graph**
+the draw_graph function in visulisations.py is used to display the creation of a student ranking from rated pairs. A snippit is shown below:
 
 https://user-images.githubusercontent.com/75681738/236702395-2f53e844-842b-431a-9aa4-0c180a841762.mp4
 
 On the 'network graph' (left) each node represents a comparison object. Each line between the nodes represents a comparison, blue lines are input comparisons, green lines are identified linking comparisons.
-On the right the box plot graph shows the range in which that object's rank can be estimated, given enough reviews, this range for each student can be reduced to its accurate placement.
+On the right the box plot graph shows the range in which that object's rank can be estimated, given enough comparisons, this range for each student can be reduced to its accurate placement.
 
 ## Dependencies
 
